@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Mashoor Supermarket</title>
+    
+    <!-- Material Icons & Remix Icon Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="./images/AS.gif" alt="Header GIF" width="100%" height="50" style="object-fit: cover;">
+        <img src="./images/grocery-banner_1.jpg" alt="Grocery Banner" width="100%" height="200" style="object-fit: cover;">
+
+        <header>
+            <center>
+                <marquee behavior="scroll" direction="left">
+                    <img src="./images/fresh-products-banner.jpg" width="700" height="170" alt="Banner 1">
+                    <img src="./images/lux_generic_desktop_copy.jpg" width="700" height="170" alt="Banner 2">
+                    <img src="./images/winter-essentials-banner.jpg" width="700" height="170" alt="Banner 3">
+                    <img src="./images/gulfa_desktop.jpg" width="700" height="170" alt="Banner 4">
+                    <img src="./images/clarin_desktop.jpg" width="700" height="170" alt="Banner 5">
+                </marquee>
+            </center>
+        </header>
+
+        <nav id="nav">
+            <ul id="menu">
+                <li class="category"><a href="#"><i>Cosmetics</i></a></li>
+                <li class="category"><a href="#"><i>Computers</i></a></li>
+                <li class="category"><a href="#"><i>Electronics</i></a></li>
+                <li class="category"><a href="#"><i>Jewellery</i></a></li>
+                <li class="category"><a href="#"><i>Men's Clothing</i></a></li>
+                <li class="category"><a href="#"><i>Sports</i></a></li>
+                <li class="category"><a href="#"><i>Grocery</i></a></li>
+                <li class="category"><a href="#"><i>Women's Clothing</i></a></li>
+            </ul>
+        </nav>
+
+        <!-- Search bar & status messages -->
+<input type="text" id="searchInput" placeholder="Enter Search Item">
+<div id="loading">Loading........</div>
+<div id="error"></div>
+
+<!-- Main Section: Products on the Left, Cart on the Right -->
+<main class="main-content">
+    
+    <!-- Left Column: Products + Pagination -->
+    <section class="products-section">
+        <div id="card" class="products"></div>
+        <div id="pagination" class="pagination"></div>
+    </section>
+
+    <!-- Right Column: My Cart -->
+    <aside class="cart">
+        <h4 class="cart-title">My Cart (<span id="counter">0</span>)</h4>
+        
+        <div class="cart-box">
+            <div class="empty-cart">
+                <i class="ri-shopping-cart-2-line"></i>
+                <h5 id="emptyMessage">Cart is empty</h5>
+            </div>
+            <div class="cart-items"></div>
+        </div>
+
+        <div class="cart-total">
+            Total Price: <span id="priceCount">$0.00</span>
+             <button id="checkout-btn" onclick="showCheckout()">Proceed to Checkout</button>
+        </div>
+    </aside>
+     
+      <!-- Payment / Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <h2>Payment Method <button onclick="closeCheckout()">×</button></h2>
+            <form id="payment-form">
+                <label for="card-name">Name on Card</label>
+                <input type="text" id="card-name" required placeholder="John Doe">
+
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" required placeholder="1234 5678 9101 1121" maxlength="19">
+
+                <div class="form-row">
+                    <div>
+                        <label for="card-expiry">Expiry Date</label>
+                        <input type="text" id="card-expiry" required placeholder="MM/YY" maxlength="5">
+                    </div>
+                    <div>
+                        <label for="card-cvc">CVC</label>
+                        <input type="text" id="card-cvc" required placeholder="123" maxlength="3">
+                    </div>
+                </div>
+
+                <button type="submit" class="pay-now-btn">Pay Now</button>
+            </form>
+        </div>
+    </div>
+
+</main>
+
+    <script src="./app.js"></script>
+</body>
+</html>
